@@ -1,0 +1,625 @@
+[
+    {
+        "id": "dff2074d8af7717f",
+        "type": "tab",
+        "label": "Test-OPCUA",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "16e780b782bd6dcb",
+        "type": "inject",
+        "z": "dff2074d8af7717f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 260,
+        "wires": [
+            [
+                "d2c6918c0ad93a70",
+                "2ad3d79d36119a0a",
+                "2d8feef8d32989a8",
+                "8f464c7a936f0cfa",
+                "5a3d7363e5af70eb"
+            ]
+        ]
+    },
+    {
+        "id": "a030848d983b5075",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "Accelerometer-Z",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "142f812ac00d8e9a",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "Accelerometer-Y",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8d4dadbd7e357cd9",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "Accelerometer-X",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b9eefdfc152d8181",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "Humidity",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "8f464c7a936f0cfa",
+        "type": "OpcUa-Item",
+        "z": "dff2074d8af7717f",
+        "item": "ns=1;s=accelerationZ",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "c6c10e8d83814025"
+            ]
+        ]
+    },
+    {
+        "id": "d2c6918c0ad93a70",
+        "type": "OpcUa-Item",
+        "z": "dff2074d8af7717f",
+        "item": "ns=1;s=accelerationY",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "fcc4673358b3e36f"
+            ]
+        ]
+    },
+    {
+        "id": "2ad3d79d36119a0a",
+        "type": "OpcUa-Item",
+        "z": "dff2074d8af7717f",
+        "item": "ns=1;s=accelerationX",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "0609c607be3a3437"
+            ]
+        ]
+    },
+    {
+        "id": "2d8feef8d32989a8",
+        "type": "OpcUa-Item",
+        "z": "dff2074d8af7717f",
+        "item": "ns=1;s=humidity",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "f719d92a81b77f89"
+            ]
+        ]
+    },
+    {
+        "id": "c6c10e8d83814025",
+        "type": "OpcUa-Client",
+        "z": "dff2074d8af7717f",
+        "endpoint": "792f516a369d2c6d",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [
+                "6abced70f36f0c5c",
+                "a030848d983b5075",
+                "8af425780ead34cc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fcc4673358b3e36f",
+        "type": "OpcUa-Client",
+        "z": "dff2074d8af7717f",
+        "endpoint": "5bc94c05aafdf63e",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "6abced70f36f0c5c",
+                "142f812ac00d8e9a",
+                "8af425780ead34cc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0609c607be3a3437",
+        "type": "OpcUa-Client",
+        "z": "dff2074d8af7717f",
+        "endpoint": "8494db60c14350fe",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "6abced70f36f0c5c",
+                "8d4dadbd7e357cd9",
+                "8af425780ead34cc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f719d92a81b77f89",
+        "type": "OpcUa-Client",
+        "z": "dff2074d8af7717f",
+        "endpoint": "8494db60c14350fe",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "6abced70f36f0c5c",
+                "b9eefdfc152d8181",
+                "5f21516495531882"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5a3d7363e5af70eb",
+        "type": "OpcUa-Item",
+        "z": "dff2074d8af7717f",
+        "item": "ns=1;s=temperature",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 480,
+        "y": 360,
+        "wires": [
+            [
+                "e00e8d07d595b82a"
+            ]
+        ]
+    },
+    {
+        "id": "e00e8d07d595b82a",
+        "type": "OpcUa-Client",
+        "z": "dff2074d8af7717f",
+        "endpoint": "8494db60c14350fe",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 660,
+        "y": 360,
+        "wires": [
+            [
+                "6abced70f36f0c5c",
+                "2e68fd0d7cabe0ec",
+                "5f21516495531882"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2e68fd0d7cabe0ec",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "Temperature",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "bd3daf5f5acd56bb",
+        "type": "function",
+        "z": "dff2074d8af7717f",
+        "name": "function 4",
+        "func": "// Initialize an empty object to store the sensor values\nlet sensorData = {\n    \"DP-Temperature\": \"\",\n    \"DP-Humidity\": \"\",\n    \"DP-ACC_Z\": \"\",\n    \"DP-ACC_Y\": \"\",\n    \"DP-ACC_X\": \"\"\n};\n\n// Assign the values from the combined message\nsensorData[\"DP-Temperature\"] = `${msg.payload[\"ns=1;s=temperature\"]}`;\nsensorData[\"DP-Humidity\"] = `${msg.payload[\"ns=1;s=humidity\"]}`;\nsensorData[\"DP-ACC_Z\"] = `${msg.payload[\"ns=1;s=accelerationZ\"]}`;\nsensorData[\"DP-ACC_Y\"] = `${msg.payload[\"ns=1;s=accelerationY\"]}`;\nsensorData[\"DP-ACC_X\"] = `${msg.payload[\"ns=1;s=accelerationX\"]}`;\n\n// Create the payload array for Insights Hub\nconst values = [\n    {\n        \"dataPointId\": \"DP-Temperature\",\n        \"qualityCode\": \"0\",\n        \"value\": sensorData[\"DP-Temperature\"]\n    },\n    {\n        \"dataPointId\": \"DP-Humidity\",\n        \"qualityCode\": \"0\",\n        \"value\": sensorData[\"DP-Humidity\"]\n    },\n    {\n        \"dataPointId\": \"DP-ACC_Z\",\n        \"qualityCode\": \"0\",\n        \"value\": sensorData[\"DP-ACC_Z\"]\n    },\n    {\n        \"dataPointId\": \"DP-ACC_Y\",\n        \"qualityCode\": \"0\",\n        \"value\": sensorData[\"DP-ACC_Y\"]\n    },\n    {\n        \"dataPointId\": \"DP-ACC_X\",\n        \"qualityCode\": \"0\",\n        \"value\": sensorData[\"DP-ACC_X\"]\n    }\n];\n\n// Set the payload and timestamp for Insights Hub\nmsg.payload = values;\nmsg._time = new Date();\n\n// Format the data for the chart node\nlet chartData = values.map(item => {\n    return { topic: item.dataPointId, payload: parseFloat(item.value) };\n});\n\n// Return both payloads\nreturn [msg, { payload: chartData }];\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 400,
+        "wires": [
+            [
+                "42ccc44303c937cc",
+                "79c890f2bd853af9"
+            ]
+        ]
+    },
+    {
+        "id": "42ccc44303c937cc",
+        "type": "mindconnect",
+        "z": "dff2074d8af7717f",
+        "name": "CNC-Ari_yusuf_Shone",
+        "configtype": "SHARED_SECRET",
+        "agentconfig": "{\n  \"content\": {\n    \"baseUrl\": \"https://southgate.eu1.mindsphere.io\",\n    \"iat\": \"eyJraWQiOiJrZXktaWQtMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJpc3MiOiJTQ0kiLCJzdWIiOiIwMTBkMDkxMTgwNmU0ODZiOTM5ZjgxNTEzZDVkMDA2MSIsImF1ZCI6IkFJQU0iLCJpYXQiOjE3MzEzNTA2NDMsIm5iZiI6MTczMTM1MDY0MywiZXhwIjoxNzMxOTU1NDQzLCJqdGkiOiI5OTdiNTUwZC0wMWMwLTQ1OTQtOGNhNC01NzQ3ZmMzMTZiNDAiLCJzY29wZSI6IklBVCIsInRlbiI6ImNvdnVuaTEiLCJ0ZW5fY3R4IjoibWFpbi10ZW5hbnQiLCJjbGllbnRfY3JlZGVudGlhbHNfcHJvZmlsZSI6WyJTSEFSRURfU0VDUkVUIl0sInNjaGVtYXMiOlsidXJuOnNpZW1lbnM6bWluZHNwaGVyZTp2MSJdfQ.gcDkSzBuFPbJxbM5gqsC4U0qB6W8UZvfPD1NQzT7GtOjMZz6QY5UfQHfC1stAmFSPlrj4R5w59V1lW_4o_hWQWk_4xETXp1bSNF1C5O6_D6LhZCBgbvbPsAEHXiYzr_qP95jLQntERRpQA8u6z9FH5Vlsx657A1byiHWg3taJ_h8aB6pH0t8bzgbrZnCYmJGUK9vMt769NogMP5aZZRURDefYW0b3ns9cufBfywn-DAS7_f7soy8Utfe82ptFTDJpbjOapDcAcQc174892VmM-4NLbzXEbkHa9fxJ9cbZgijGhElhDZXG9XxCx-Iu0tGQsOHF5E77QOFHnoKhLlurg\",\n    \"clientCredentialProfile\": [\n      \"SHARED_SECRET\"\n    ],\n    \"clientId\": \"010d0911806e486b939f81513d5d0061\",\n    \"tenant\": \"covuni1\"\n  },\n  \"expiration\": \"2024-11-18T18:44:03.000Z\"\n}",
+        "privatekey": "",
+        "model": "",
+        "validate": true,
+        "validateevent": true,
+        "chunk": false,
+        "disablekeepalive": false,
+        "emitcontrol": false,
+        "datalakeonly": false,
+        "supressverbosity": false,
+        "retry": 3,
+        "parallel": 1,
+        "asyncduration": 10,
+        "x": 760,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6abced70f36f0c5c",
+        "type": "join",
+        "z": "dff2074d8af7717f",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 850,
+        "y": 420,
+        "wires": [
+            [
+                "519eca49020cadc8",
+                "bd3daf5f5acd56bb"
+            ]
+        ]
+    },
+    {
+        "id": "519eca49020cadc8",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "JOINED",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "79c890f2bd853af9",
+        "type": "debug",
+        "z": "dff2074d8af7717f",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8af425780ead34cc",
+        "type": "ui_chart",
+        "z": "dff2074d8af7717f",
+        "name": "",
+        "group": "55992c1c7a7ce079",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "AccelerationXYZ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f21516495531882",
+        "type": "ui_chart",
+        "z": "dff2074d8af7717f",
+        "name": "",
+        "group": "55992c1c7a7ce079",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temp&Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 920,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "792f516a369d2c6d",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.13:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "5bc94c05aafdf63e",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.13:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "8494db60c14350fe",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.13:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "55992c1c7a7ce079",
+        "type": "ui_group",
+        "name": "Temp&Humidity",
+        "tab": "91e3135de2e431d7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "91e3135de2e431d7",
+        "type": "ui_tab",
+        "name": "Temp&Humidity",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
