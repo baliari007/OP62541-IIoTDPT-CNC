@@ -1,6 +1,6 @@
 # OP62541-IIoTDPT-CNC
-Contains the codes and DATA from the paper "Open62541-Enabled OPC UA Integrated Advanced IIoT Digital Process Twin Framework for CNC Machining Operations"
-Five Layered Open62541-Enabled OPC UA integrated  Industrial Internet of Things (IIoT) Digital Process Twin Framework
+Contains the codes and DATA from the paper "A Lightweight Advanced Digital Process Twin IIoT Framework with Open62541 Enabled OPC UA protocol for CNC Machining"
+Five Layered Lightweight Advanced Digital Process Twin IIOT Framework with Open62541 Enabled OPC UA protocol
 OP62541-IIoTDPT-CNC
 Setup procedure
 
